@@ -27,8 +27,8 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+Hi, I’m Linyan (Lydia) Li, a master’s student in Data Science at the University of Chicago. I earned my B.S. in Statistics and Data Science from the University of Wisconsin–Madison. Go Badgers! 🦡
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I’m interested in multimodal and trustworthy AI. My past projects include interpreting vision–language models and using physiological and behavioral data to model human activity and user states. I’d like to build on this work by studying how multimodal foundation models reason and support decision-making, with a focus on understanding their behavior and evaluating how well they generalize to new settings.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+[GitHub](https://github.com/Linyan0115) · [LinkedIn](https://www.linkedin.com/in/linyan-li-b53670238/) · [Email](mailto:linyan@uchicago.edu)
