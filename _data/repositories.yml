@@ -1,14 +1,12 @@
 github_users:
-  - torvalds
-  - alshedivat
+  - Linyan0115
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - JayDuan123/InterVLM
+  - Linyan0115/large-scale-review-helpfulness-prediction
+  - Linyan0115/LLM-Based-Surgical-Scheduling-Optimization
+  - Linyan0115/uw-madison-charging-optimization
+  - Linyan0115/From-Links-to-Lanes-A-Lane-Level-Traffic-Assignment-Framework.
+  - Linyan0115/Dynamic-Pricing
