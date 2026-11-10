@@ -6,7 +6,7 @@ subtitle: "M.S. in Data Science, University of Chicago"
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: Linyan.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
     <p>555 your office number</p>
