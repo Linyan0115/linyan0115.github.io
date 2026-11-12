@@ -3,7 +3,7 @@ layout: page
 permalink: /repositories/
 title: repositories
 description: Selected code from my research and coursework.
-nav: true
+nav: false
 nav_order: 4
 ---
 
