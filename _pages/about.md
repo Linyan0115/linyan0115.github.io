@@ -37,6 +37,12 @@ I’m interested in multimodal and trustworthy AI. My past projects include inte
 <style>
   @media (hover: hover) and (pointer: fine) {
     body {
+      /* 🦋 日间模式 */
+      cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='2' y='25' font-size='24'%3E%F0%9F%A6%8B%3C/text%3E%3C/svg%3E") 12 12, auto;
+    }
+
+    html[data-theme="dark"] body {
+      /* ✨ 夜间模式 */
       cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32'%3E%3Ctext x='2' y='25' font-size='24'%3E%E2%9C%A8%3C/text%3E%3C/svg%3E") 12 12, auto;
     }
 
