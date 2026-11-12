@@ -9,10 +9,12 @@ nav_order: 2
 
 *Coming soon.*
 
-#{% include bib_search.liquid %}
+{% comment %}
+{% include bib_search.liquid %}
 
-#<div class="publications">
+<div class="publications">
 
-#{% bibliography %}
+{% bibliography %}
 
-#</div>
+</div>
+{% endcomment %}
