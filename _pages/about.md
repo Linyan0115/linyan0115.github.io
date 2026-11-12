@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: "M.S. in Data Science, University of Chicago"
+subtitle: "<strong>M.S. in Data Science, University of Chicago</strong>"
 
 profile:
   align: right
