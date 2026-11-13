@@ -1,7 +1,7 @@
 ---
 layout: page
-title: "LLM-Based Surgical Scheduling Optimization"
-description: "Turning written scheduling requirements into a mathematical optimization model for operating rooms."
+title: "Surgical Scheduling"
+description: "Large Language Models · Operations Research"
 img: assets/img/surgical-scheduling.gif
 importance: 5
 category: work
@@ -31,5 +31,7 @@ How can we turn written scheduling requirements into an operating-room schedule 
 *Visualization of the surgical scheduling workflow.*
 
 ## Results
+
+In an evaluation with more than 1,000 surgical cases across 20 operating rooms, the system improved scheduling efficiency by 18% and decision speed by 20%.
 
 In an evaluation with more than 1,000 surgical cases across 20 operating rooms, the system improved scheduling efficiency by 18% and increased decision speed by 20%.
