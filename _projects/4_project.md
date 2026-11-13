@@ -1,80 +1,32 @@
 ---
 layout: page
-title: project 4
-description: another without an image
-img:
-importance: 3
-category: fun
+title: "Parallel Modeling of Steam Review Helpfulness"
+description: "A parallel computing pipeline for comparing Steam review helpfulness across languages."
+img: assets/img/steam-review-performance.png
+importance: 4
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+**Spring 2026 · STAT405 UW–Madison · Team project**
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+[View the R scripts and HTCondor job files on GitHub](https://github.com/Linyan0115/large-scale-review-helpfulness-prediction)
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Research Question
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+How well can review metadata and user activity predict whether a Steam review will be marked as helpful? We compared English, Chinese, and other-language reviews to see how predictive performance varied across groups.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## Parallel Computing Methodology
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**Data partitioning.** We grouped reviews by language and split each group into five chunks, creating 15 independent modeling jobs.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+**Parallel execution.** We submitted the jobs through HTCondor on UW–Madison’s Center for High Throughput Computing (CHTC). Each job read only its assigned chunk, requested a few gigabytes of memory and disk space, and could run concurrently with the other jobs. Within each chunk, an R script cleaned the data, engineered features, split the data into 80% training and 20% testing, and fit a logistic regression model.
 
-{% raw %}
+**Aggregation.** Each job saved its fitted coefficients and held-out evaluation metrics. Once all 15 jobs finished, a separate aggregation job combined the outputs, summarized performance across chunks within each language group, and generated comparison plots.
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+## Results
 
-{% endraw %}
+The English-language models achieved the highest mean AUC (0.706), and the Chinese-language models had the lowest mean AUC (0.609). Performance was stable across chunks within each language group, while the differences between groups showed that the same modeling pipeline had different predictive power across languages.
+
+{% include figure.liquid path="assets/img/steam-review-performance.png" class="img-fluid rounded" alt="Held-out model performance across English, Chinese, and other-language Steam reviews" %}
+
+*Held-out model performance by language group.*
