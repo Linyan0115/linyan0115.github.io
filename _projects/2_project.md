@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Campus Charging Station Optimization"
-description: "Choosing where to place portable charging kiosks on the UW–Madison campus."
+description: "Network Optimization · Facility Location"
 img: assets/img/charging-placement.png
 importance: 2
 category: work
