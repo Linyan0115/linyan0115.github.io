@@ -35,8 +35,6 @@ nav_order: 3
 </style>
 
 <div class="projects">
-  <p class="project-intro">
-    My projects span machine learning, data science, and optimization. I’m interested in how models can help us understand complex data and make better decisions, from interpreting multimodal signals to planning how people move through and use shared spaces.
   </p>
 
   <section aria-labelledby="graduate-projects">
