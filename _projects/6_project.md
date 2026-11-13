@@ -1,80 +1,34 @@
 ---
 layout: page
-title: project 6
-description: a project with no image
-img:
-importance: 4
-category: fun
+title: "Dynamic Pricing"
+description: "Reinforcement Learning · Inventory Optimization"
+img: assets/img/dynamic-pricing.png
+importance: 6
+category: work
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
+**Research project · 2024 Tri-Campus Conference**
 
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
+[View the presentation slides](https://github.com/Linyan0115/Dynamic-Pricing/blob/main/slides-Tricampus2024.pdf) · [View the extended abstract](https://github.com/Linyan0115/Dynamic-Pricing/blob/main/triCampus_Extended%20Abstract.pdf)
 
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
+## Research Question
 
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
+How should a supermarket adjust prices for fresh vegetables throughout the day as demand changes and unsold inventory approaches the end of its shelf life? We studied this question using historical sales data for five perishable vegetable products.
 
-You can also put regular text between your rows of images.
-Say you wanted to write a little bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
+## Methodology
 
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
+**Sales forecasting with Random Forest.** We trained a Random Forest model on historical data to estimate sales under different prices and time slots.
 
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
+**Pricing decisions with Q-learning.** We divided the selling day into time slots and treated price selection as a sequential decision. We used the sales forecasts to evaluate candidate prices and built a Q-table to guide which pricing action to choose in each state.
 
-{% raw %}
+{% include figure.liquid path="assets/img/dynamic-pricing.png" class="img-fluid rounded" alt="Framework combining Random Forest sales forecasts with Q-learning pricing decisions" %}
 
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
-```
+*Random Forest forecasts sales under different prices, and Q-learning guides pricing decisions.*
 
-{% endraw %}
+## Revenue Evaluation
+
+For each candidate pricing strategy, we estimated revenue by multiplying prices by predicted sales. We selected the strategy with the highest estimated revenue and used recorded historical revenue as the benchmark.
+
+{% include figure.liquid path="assets/img/dynamic-pricing-revenue.png" class="img-fluid rounded" alt="Workflow for estimating revenue under candidate pricing strategies and benchmarking against historical revenue" %}
+
+*Workflow for estimating revenue and benchmarking it against historical revenue.*
