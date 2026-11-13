@@ -35,7 +35,6 @@ nav_order: 3
 </style>
 
 <div class="projects">
-  </p>
 
   <section aria-labelledby="graduate-projects">
     <h2 class="project-section-heading" id="graduate-projects">Graduate Projects</h2>
