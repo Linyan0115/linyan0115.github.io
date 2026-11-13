@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "Parallel Modeling of Steam Review Helpfulness"
-description: "A parallel computing pipeline for comparing Steam review helpfulness across languages."
+description: "Parallel Computing · Applied Machine Learning"
 img: assets/img/steam-review-performance.png
 importance: 4
 category: work
