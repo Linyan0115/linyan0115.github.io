@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Parallel Modeling of Steam Review Helpfulness"
+title: "Steam Review Modeling"
 description: "Parallel Computing · Applied Machine Learning"
 img: assets/img/steam-review-performance.png
 importance: 4
