@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Campus Charging Station Optimization"
+title: "Charging Optimization"
 description: "Network Optimization · Facility Location"
 img: assets/img/charging-placement.png
 importance: 2
