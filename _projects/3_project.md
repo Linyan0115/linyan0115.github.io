@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "From Links to Lanes"
-description: "Modeling how turns and lane changes shape traffic congestion and route choice."
+description: "Transportation Modeling · Traffic Assignment"
 img: assets/img/lane-assignment.png
 importance: 3
 category: work
