@@ -1,7 +1,7 @@
 ---
 layout: page
 title: "InterVLM"
-description: "Interpreting multimodal meme representations with sparse autoencoders."
+description: "Multimodal Learning · Model Interpretability"
 img: assets/img/intervlm-pipeline.png
 importance: 1
 category: work
