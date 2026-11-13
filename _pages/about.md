@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: "<strong>M.S. in Data Science, University of Chicago</strong>"
 
